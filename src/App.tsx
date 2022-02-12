@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import MyButton from './components/MyButton';
+import MyModal from './components/MyModal';
+import { questions } from './data/questions';
+import Table from './components/Table';
+import TestResult from './components/TestResult';
+import { TestProvider } from './contexts';
 
 function App() {
+  const [showResult, setShowResult] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TestProvider>
+      <div className="App">
+        <div className="App-header">
+          <Table
+            questions={questions}
+          />
+          <MyButton
+            onClick={() => setShowResult(true)}
+          >
+            получить результат
+          </MyButton>
+          <MyModal
+            visible={showResult}
+            setVisible={setShowResult}
+          >
+            <TestResult />
+          </MyModal>
+        </div>
+      </div>
+    </TestProvider>
   );
 }
 

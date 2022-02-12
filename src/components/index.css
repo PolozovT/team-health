@@ -1,0 +1,50 @@
+.MyButton {
+  border-radius: 10px;
+  border: 1px solid salmon;
+  padding: 5px;
+  margin: 10px;
+}
+
+.myModal {
+position: fixed;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+display: none;
+background-color: rgba(0,0,0,0.5);
+}
+
+.myModal.active {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.myModalContent {
+  padding: 15px;
+  background-color: rgb(201, 192, 201);
+  border-radius: 16px;
+  min-width: 250px;
+}
+
+.resultWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-wrapper {
+  border: 1px solid teal;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.active {
+  color: #0375ff;
+}
