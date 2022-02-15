@@ -1,16 +1,12 @@
 import React, { useLayoutEffect, useState } from "react";
 import { FC, useContext } from "react";
-import { PersTypes } from "../abstractions/models";
+import { IPersonTypesRes, PersTypes } from "../abstractions/models";
 import { TestContext } from "../contexts";
 import Graph from "./Graph";
 
-interface IPersonTypesRes {
-  title: PersTypes;
-  value: number;
-}
-
 const TestResult: FC = () => {
   const { sumState, sumDispatch } = useContext(TestContext);
+  const [resArr, setResArr] = useState<IPersonTypesRes[]>([]);
   const [currentPersType, setCurrentPersType] = useState<PersTypes | null>(null);
 
   // driver = a * b
@@ -22,38 +18,35 @@ const TestResult: FC = () => {
     const inspiringRes = sumState.bSum * sumState.cSum
     const analyticRes = sumState.aSum * sumState.dSum
     const harmonizerRes = sumState.cSum * sumState.dSum;
-    const resArr: IPersonTypesRes[] = [
+    const resArray: IPersonTypesRes[] = [
       {
-        title: PersTypes.DRIVER,
+        name: PersTypes.DRIVER,
         value: driverRes,
       },
       {
-        title: PersTypes.INSPIRING,
+        name: PersTypes.INSPIRING,
         value: inspiringRes,
       },
       {
-        title: PersTypes.ANALYTIC,
+        name: PersTypes.ANALYTIC,
         value: analyticRes,
       },
       {
-        title: PersTypes.HARMONIZER,
+        name: PersTypes.HARMONIZER,
         value: harmonizerRes,
       },
     ].sort((a, b) => b.value - a.value);
+    setCurrentPersType(resArray[0]?.name);
 
-    console.log(driverRes, inspiringRes, analyticRes, harmonizerRes);
-    setCurrentPersType(resArr[0].title)
+    setResArr(resArray);
   }, [sumState]);
 
   return (
     <div className="resultWrapper">
-      {currentPersType}
-      <Graph
-        aSum={sumState.aSum}
-        bSum={sumState.bSum}
-        cSum={sumState.cSum}
-        dSum={sumState.dSum}
-      />
+      <span style={{ marginBottom: '10px' }}>
+        вы: {currentPersType}
+      </span>
+      <Graph data={[...resArr]} />
     </div>
   )
 }

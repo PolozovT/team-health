@@ -50,3 +50,12 @@ export enum PersTypes {
   ANALYTIC = 'аналитик',
   HARMONIZER = 'гармонизатор',
 }
+
+export interface IPersonTypesRes {
+  name: PersTypes;
+  value: number;
+}
+
+export interface IGraphProps {
+  data: IPersonTypesRes[];
+}

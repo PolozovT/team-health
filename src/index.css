@@ -24,3 +24,6 @@ table {
   font-size: calc(10px + 2vmin);
 }
 
+.error {
+  color: #DC143C;
+}

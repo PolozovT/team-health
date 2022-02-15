@@ -56,6 +56,7 @@ const Row: FC<IRowModel> = ({ questions, getResults }) => {
     }
   }, [answer]);
 
+  // make row changeble! not only input
   return (
     <tr className='row-wrapper'>
       <td>
