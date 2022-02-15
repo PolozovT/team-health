@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/team-health/static/css/main.0affe1b6.css",
-    "main.js": "/team-health/static/js/main.66853965.js",
+    "main.css": "/team-health/static/css/main.dfd537a7.css",
+    "main.js": "/team-health/static/js/main.f97bfd6c.js",
     "static/js/787.5971960d.chunk.js": "/team-health/static/js/787.5971960d.chunk.js",
     "index.html": "/team-health/index.html",
-    "main.0affe1b6.css.map": "/team-health/static/css/main.0affe1b6.css.map",
-    "main.66853965.js.map": "/team-health/static/js/main.66853965.js.map",
+    "main.dfd537a7.css.map": "/team-health/static/css/main.dfd537a7.css.map",
+    "main.f97bfd6c.js.map": "/team-health/static/js/main.f97bfd6c.js.map",
     "787.5971960d.chunk.js.map": "/team-health/static/js/787.5971960d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0affe1b6.css",
-    "static/js/main.66853965.js"
+    "static/css/main.dfd537a7.css",
+    "static/js/main.f97bfd6c.js"
   ]
 }
